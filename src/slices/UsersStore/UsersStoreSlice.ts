@@ -8,12 +8,12 @@ export interface UsersStoreState {
   error: string | null;
 }
 
-const ROCKET_URL = 'https://randomuser.me/api/?results=';
+const BASE_URL = 'https://randomuser.me/api/?results=';
 
 export const fetchUsers = createAsyncThunk(
   'usersStore/fetchUsers',
   async (count: number) => {
-    const response = await axios.get(ROCKET_URL + count);
+    const response = await axios.get(BASE_URL + count);
     return response.data;
   },
 );
